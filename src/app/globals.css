@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f8f5ef;
+  --ink: #212821;
+  --muted: #77786d;
+  --green: #233b32;
+  --green-dark: #192d26;
+  --saffron: #c57943;
+  --line: #e9e4da;
+}
+
+@theme inline {
+  --color-background: var(--paper);
+  --color-foreground: var(--ink);
+  --font-sans: Arial, Helvetica, sans-serif;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+button, input, textarea, select { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+::selection { background: #e9c9a9; color: var(--ink); }
+
+.page-shell { width: min(1180px, calc(100% - 64px)); margin-inline: auto; }
+.eyebrow { color: var(--saffron); font-size: 10px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+.serif { font-family: Georgia, "Times New Roman", serif; letter-spacing: -.035em; }
+.nav-link { color: #66695f; transition: color .2s ease; }
+.nav-link:hover, .nav-link.active { color: var(--green); }
+.soft-shadow { box-shadow: 0 22px 65px rgba(40, 45, 35, .08); }
+.temple-image {
+  background-position: center;
+  background-size: cover;
+  background-color: #9a8268;
+}
+.temple-card { transition: transform .25s ease, box-shadow .25s ease; }
+.temple-card:hover { transform: translateY(-4px); box-shadow: 0 24px 52px rgba(41, 48, 37, .11); }
+.favorite-button { transition: background .2s ease, color .2s ease, transform .2s ease; }
+.favorite-button:hover { transform: scale(1.06); }
+.filter-chip { transition: background .2s ease, color .2s ease, border-color .2s ease; }
+.field {
+  width: 100%;
+  border: 1px solid #e5e1d8;
+  border-radius: 12px;
+  background: #fffdfa;
+  padding: 12px 14px;
+  color: var(--ink);
+  outline: none;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+.field:focus { border-color: #9baf9d; box-shadow: 0 0 0 3px rgba(35, 59, 50, .08); }
+.field-label { display: block; margin-bottom: 7px; color: #77786d; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+.detail-section { border-bottom: 1px solid var(--line); padding-block: 24px; }
+.detail-section:last-child { border-bottom: 0; }
+
+@media (max-width: 700px) {
+  .page-shell { width: min(100% - 36px, 560px); }
+}
